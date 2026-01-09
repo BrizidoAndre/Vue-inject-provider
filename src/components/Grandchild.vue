@@ -7,8 +7,7 @@ const {count} = inject('counter-key');
 const {names} = inject('names-key');
 
 function removeLast() {
-  const lastIndex = names.value.length;
-  names.value.splice(lastIndex, 1);
+  names.value.splice(names.value.length - 1, 1);
 }
 </script>
 
@@ -21,17 +20,12 @@ function removeLast() {
         <input type="text" v-model="count">
       </li>
       <li>
-        <p>Global count from main.js: <strong>{{ commonCount }}</strong></p>
-        <input type="text" v-model="commonCount">
-      </li>
-      <li>
         <h3>Names</h3>
+        <button @click="removeLast">Remove last name</button>
         <ul>
           <li v-for="name in names">{{ name }}</li>
         </ul>
-        <button @click="removeLast">Remove last name</button>
       </li>
     </ul>
-
   </div>
 </template>

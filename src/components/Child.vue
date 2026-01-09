@@ -1,5 +1,5 @@
 <script setup>
-import Grandchild from "@/Grandchild.vue";
+import Grandchild from "@/components/Grandchild.vue";
 
 </script>
 
